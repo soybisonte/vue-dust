@@ -1,39 +1,42 @@
 <script>
-import axios from 'axios'
+import p5 from 'p5'
+import Sketch from '../sketches/HelloWorld'
 export default {
-  name: 'HelloWorld',
+  name: 'Sketch',
   data () {
     return {
-      responseData: []
+      appSize: {width: p5.windowWidth, height: p5.windowHeight},
+      metaballs: null
     }
   },
   created () {
-    this.fetchData()
   },
-  mounted () {
-  },
-  methods: {
-    async fetchData () {
-      let response = await axios.get('http://jsonplaceholder.typicode.com/posts')
-      this.responseData = response.data
+  props: {
+    color: {
+      type: String,
+      default: ''
     }
+  },
+  components: {},
+  mounted: function () {
+    this.$nextTick(() => {
+        const metaballs = new p5(Sketch) // eslint-disable-line
+    })
+  },
+  beforeDestroy () {
+    window.p5.remove()
+  },
+  destroyed () {
+  },
+  methods: {},
+  computed: {
   }
 }
 </script>
 
 <template>
-  <div class="hello">
-    <h1>Hola</h1>
-    <h3 class="mobileVisible">I'm in mobile only</h3>
-    <ul class="posts">
-      <li v-for="(item, index) in responseData" :key="index" class="post--item">
-        <h3>{{ item.title }}</h3>
-        <small>{{item.userId}} : {{ item.id }}</small>
-        <p>{{ item.body }}</p>
-      </li>
-    </ul>
+  <div id="Sketch" class="Sketch">
   </div>
 </template>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style src="../styles/HelloWorld.styl" lang="stylus"></style>
+<style src="../styles/Sketch.styl" lang="stylus"></style>

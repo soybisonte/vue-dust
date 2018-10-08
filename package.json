@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "gsap": "^1.20.4",
+    "p5": "^0.7.2",
     "rupture": "^0.7.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
@@ -57,7 +58,7 @@
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
-    "url-loader": "^0.5.8",
+    "url-loader": "^1.1.1",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
