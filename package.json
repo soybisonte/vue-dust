@@ -13,8 +13,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "gsap": "^1.20.4",
+    "lost": "^8.3.0",
     "p5": "^0.7.2",
     "reveal": "0.0.4",
+    "reveal.js": "^3.7.0",
     "rupture": "^0.7.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
@@ -55,6 +57,7 @@
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
+    "poststylus": "^1.0.0",
     "rimraf": "^2.6.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",

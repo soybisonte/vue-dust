@@ -87,6 +87,9 @@ module.exports = {
            default: {
                use: [
                    require("rupture")(),
+                   require("poststylus")([
+                        require("lost")()
+                    ])
                ],
                import: [
                    "~rupture/rupture/index.styl"
