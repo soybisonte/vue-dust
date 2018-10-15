@@ -6,7 +6,8 @@ export default {
   data () {
     return {
       appSize: {width: p5.windowWidth, height: p5.windowHeight},
-      metaballs: null
+      SketchWrapper: null,
+      title: 'Elipse'
     }
   },
   created () {
@@ -20,7 +21,7 @@ export default {
   components: {},
   mounted: function () {
     this.$nextTick(() => {
-        const metaballs = new p5(Sketch) // eslint-disable-line
+        const SketchWrapper = new p5(Sketch) // eslint-disable-line
     })
   },
   beforeDestroy () {
@@ -36,6 +37,7 @@ export default {
 
 <template>
   <div id="Sketch" class="Sketch">
+    <h3>{{title}}</h3>
   </div>
 </template>
 

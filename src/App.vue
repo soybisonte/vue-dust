@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
+    <!-- <h1 class="MainTitle">Isolated.</h1> -->
     <router-view/>
   </div>
 </template>
@@ -11,24 +12,4 @@ export default {
 }
 </script>
 
-<style>
-html,body {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden;
-}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin: 0px;
-  padding: 0px;
-}
-</style>
+<style src="./styles/main/base.styl" lang="stylus"></style>
