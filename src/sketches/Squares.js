@@ -1,6 +1,4 @@
 // Sketch scope
-// import Particle from './utils/Particle.js'
-// import CustomCurve from './utils/Curve.js'
 const Sketch = (p5) => {
   // Variables scoped within p5
   const canvasWidth = 600
@@ -21,17 +19,20 @@ const Sketch = (p5) => {
     p5.noFill()
     p5.stroke(255, 100)
     const iterations = 20
-    const initialRadius = 250
-    for (var i = 0; i < iterations; i++) {
+    const initialRadius = 150
+    // const separation = 2
+    p5.rectMode(p5.CENTER)
+    for (var i = 1; i < iterations; i++) {
       // let separation = 300 * Math.sin(i) / (i + 1)
-      let separation = 5
       p5.push()
       p5.translate(canvasWidth / 2, canvasHeight / 2)
-      // p5.rotate(Math.PI / 4)
-      // p5.ellipse(0, 0, initialRadius - (i * separation), initialRadius + (i * separation))
-      // p5.rotate(-2 * Math.PI / 4)
-      // p5.ellipse(0, 0, initialRadius - (i * separation), initialRadius + (i * separation))
-      p5.ellipse(0, 0, separation * i, 2 * separation * i)
+      // p5.rotate(Math.pow(i, 0.2))
+      // p5.rect(0, 0, initialRadius, initialRadius)
+      // p5.triangle(initialRadius * Math.cos(), 75, 10, 20, 86, 0)
+      polygon(0, 0, initialRadius + i, i)
+      // for (var j = 1; j <= 20; j++) {
+      //   polygon(0, 0, initialRadius / j, 6)
+      // }
       p5.pop()
     }
   }
@@ -42,10 +43,15 @@ const Sketch = (p5) => {
     }
     return false
   }
-  // Window Resize
-  // ======================================
-  // p5.windowResized = () => {
-  //   p5.resizeCanvas(p5.windowWidth, p5.windowHeight)
-  // }
+  function polygon (x, y, radius, npoints) {
+    let angle = p5.TWO_PI / npoints
+    p5.beginShape()
+    for (var a = 0; a < p5.TWO_PI; a += angle) {
+      let sx = x + Math.cos(a) * radius
+      let sy = y + Math.sin(a) * radius
+      p5.vertex(sx, sy)
+    }
+    p5.endShape(p5.CLOSE)
+  }
 }
 export default Sketch

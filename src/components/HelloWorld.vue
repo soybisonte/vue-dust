@@ -1,13 +1,15 @@
 <script>
 import p5 from 'p5'
-import Sketch from '../sketches/HelloWorld'
+import Sketch from '../sketches/Tiles'
+// import Sketch from '../sketches/Squares'
+// import Sketch from '../sketches/Elipses'
 export default {
   name: 'Sketch',
   data () {
     return {
       appSize: {width: p5.windowWidth, height: p5.windowHeight},
       SketchWrapper: null,
-      title: 'Elipse'
+      title: 'Wrapper to create Stuff'
     }
   },
   created () {
@@ -25,19 +27,22 @@ export default {
     })
   },
   beforeDestroy () {
-    window.p5.remove()
+    p5.remove()
   },
   destroyed () {
   },
-  methods: {},
+  methods: {
+  },
   computed: {
   }
 }
 </script>
 
 <template>
-  <div id="Sketch" class="Sketch">
+  <div class="">
     <h3>{{title}}</h3>
+    <div id="Sketch" class="Sketch">
+    </div>
   </div>
 </template>
 

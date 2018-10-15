@@ -5,9 +5,17 @@ export default {
   components: {},
   data () {
     return {
+      galleryImages: []
     }
   },
   created () {
+    for (var i = 0; i < 16; i++) {
+      this.galleryImages.push({
+        name: `isolated ${i + 1}`,
+        link: require(`../assets/isolated_${i + 1}.png`)
+      })
+    }
+    console.log(this.items)
   },
   props: {
     color: {
@@ -133,29 +141,67 @@ export default {
         </section>
         <section>
           <div class="section-left">
+            <h1>Trabajos previos</h1>
+            <hr>
+            <ul>
+              <li>
+                <a href="https://codepen.io/collection/nVpkGW/" target="_blank">3D stuff</a>
+              </li>
+              <li>
+                <a href="https://www.openprocessing.org/sketch/606662" target="_blank">Terrain</a>
+              </li>
+              <li>
+                <a href="https://www.openprocessing.org/sketch/606663" target="_blank">SendPazuchitl</a>
+              </li>
+              <li>
+                <a href="https://www.openprocessing.org/sketch/606661" target="_blank">Maze gen</a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="section-left">
             <h1>Isolated System</h1>
             <hr>
           </div>
         </section>
         <section>
           <div class="section-left">
-            <h1>Trabajos previos</h1>
-            <hr>
-            <a href="https://codepen.io/collection/nVpkGW/" target="_blank">3D stuff</a>
-          </div>
-        </section>
-        <section>
-          <div class="section-left">
             <h1>Segunda Ley de la Termodinámica</h1>
             <hr>
-            <p>"En un sistema aislado el entropía siempre aumenta..."</p>
+            <p>"En un sistema aislado la entropía siempre aumenta..."</p>
           </div>
         </section>
         <section>
           <div class="section-left">
             <h1>El Concepto</h1>
             <hr>
-            <p>"El estado ordenado de un sistema solo tiene una configuración, con lo que es más probable encontrar desorden"</p>
+            <p>"El estado de un sistema aislado solo tiene una configuración ordenada, con lo que es más probable encontrar desorden"</p>
+          </div>
+        </section>
+        <section>
+          <section>
+            <div class="section-left">
+              <h1>Galería</h1>
+              <hr>
+            </div>
+          </section>
+          <section v-for="(item, index) in galleryImages" :key="index">
+            <h4>{{item.name}}</h4>
+            <img class="image-gallery" :src="item.link" alt="">
+          </section>
+        </section>
+        <section>
+          <div class="section-left">
+            <h1>Otros conjuros</h1>
+            <hr>
+            <a href="https://www.instagram.com/lacienciadelpoema/">@lacienciadelpoema</a>
+          </div>
+        </section>
+        <section>
+          <div class="section-left">
+            <h1>Gracias</h1>
+            <hr>
           </div>
         </section>
         <!-- <section>
